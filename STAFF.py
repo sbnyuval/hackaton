@@ -1,14 +1,15 @@
 import tkinter as tk
 import dictionary
 from menufunc import menu
-STAFF_JOB = []
 JOBS_LIST=['teacher','counselor','maintenance']
-num_of_School_staff=['0','1','2','3']
-def enter_new_teachers_to_school_system(STAFF_JOB,num_of_school_staff, JOBS_LIST):
-    # רשימה שמכילה כמות מקסימום של מורים בבית ספר
-    num_of_School_staff=[]
+# רשימה שמכילה כמות מקסימום של מורים בבית ספר
+def max_num_of_new_school_staff():
+    num_of_School_staff = []
     for i in range(200):
-        num_of_School_staff.append(str(i+1))
+        num_of_School_staff.append(str(i + 1))
+        return num_of_School_staff
+def enter_new_teachers_to_school_system():
+    num_of_School_staff=max_num_of_new_school_staff()
     # הכנסת מידע על ידי משתמש- בדיקה שהערך הוא בטווח הרצוי והרצת לולאה שרצה לפי מספר המורים שרוצים להוסיף
     num_staff="Enter number of School staff: "
     num=menu(num_staff)
@@ -19,48 +20,45 @@ def enter_new_teachers_to_school_system(STAFF_JOB,num_of_school_staff, JOBS_LIST
             if num == 'exit':
                 break
             num = menu(num_staff)
-
-    STAFF_NAMES_AND_JOBS=[]
-    STAFF_GRADES=[]
-    STAFF_JOB=[]
+    num = int(num)
+    STAFF_NAMES_AND_JOBS={}
     staff_name="Enter new staff name: "
     job_name="Enter job name: "
-    num=int(num)
-    for i in range(num):
-        user=menu(staff_name)
-        STAFF_NAMES_AND_JOBS.append(user)
+    for i in range(len(STAFF_NAMES_AND_JOBS)+1,num+1):
+        staff=menu(staff_name)
+        STAFF_NAMES_AND_JOBS[i]=staff
         JOB=menu(job_name)
-        if JOB.lower in JOBS_LIST:
+        if str(JOB) in JOBS_LIST:
+            print("as")
             pass
         else:
             while JOB.lower not in JOBS_LIST:
                 if JOB.lower == 'exit':
                     break
                 JOB = menu(job_name)
-        possible_grades_per_teacher=['0','1','2','3']
-        num_of_grades_per_teacher="Enter number of Grades: "
-        NUM_OF_STAFF_GRADES=menu(num_of_grades_per_teacher)
-        grades="Enter Grade: "
-        if NUM_OF_STAFF_GRADES in possible_grades_per_teacher:
-            pass
-        else:
-            while NUM_OF_STAFF_GRADES not in possible_grades_per_teacher:
-                if NUM_OF_STAFF_GRADES == 'exit':
-                    break
-                NUM_OF_STAFF_GRADES = menu(grades)
-        NUM_OF_STAFF_GRADES=int(NUM_OF_STAFF_GRADES)
-        if NUM_OF_STAFF_GRADES!=0:
-            for j in range(NUM_OF_STAFF_GRADES):
-                GRADES=menu(grades)
-                if GRADES in dictionary.dic[1]:
+        STAFF_NAMES_AND_JOBS[i](staff=JOB)
+        if JOB.lower()=='teacher':
+            what_grade_do_you_teach='what grade do you teach'
+            do_you_teach_more_than_1_grade=menu('do you teach another grade?(if yes-enter the grade number, if not-enter \"no\" ')
+            STAFF_TEACHING_GRADE=menu(what_grade_do_you_teach)
+            if STAFF_TEACHING_GRADE in dictionary.dic[1]:
+                STAFF_NAMES_AND_JOBS[i](staff=STAFF_TEACHING_GRADE)
+                pass
+            else:
+                while STAFF_TEACHING_GRADE in dictionary.dic[1]:
+                    if STAFF_TEACHING_GRADE == 'exit':
+                        break
+            while True:
+                STAFF_TEACHING_GRADE = menu(do_you_teach_more_than_1_grade)
+                if STAFF_TEACHING_GRADE in dictionary.dic[1]:
+                    STAFF_NAMES_AND_JOBS[i](staff=STAFF_TEACHING_GRADE)
                     pass
+                elif STAFF_TEACHING_GRADE.lower() == 'no':
+                    break
                 else:
-                    while GRADES in dictionary.dic[1]:
-                        if GRADES== 'exit':
+                    while STAFF_TEACHING_GRADE in dictionary.dic[1]:
+                        if STAFF_TEACHING_GRADE == 'exit':
                             break
-                        GRADES = menu(grades)
-                GRADES = int(GRADES)
-                STAFF_NAMES_AND_JOBS[i][j]=GRADES
-        else:
-            continue
-enter_new_teachers_to_school_system(STAFF_JOB,num_of_School_staff,JOBS_LIST)
+    print(STAFF_NAMES_AND_JOBS)
+
+enter_new_teachers_to_school_system()
