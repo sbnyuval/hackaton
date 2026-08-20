@@ -84,9 +84,9 @@ if user == '1':
                                 break
                             sub = menufunc.menu(subenglish_error)
                     with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\nsubject:English:{subenglishdict[sub]}")
+                        file.write(f"\nname:{user_name}\nsubject:English:{subenglishdict[sub]}")
                     with open(f"I need help with school{grade}English.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\ngrade:{grade}{subenglishdict[sub]}")
+                        file.write(f"\nname:{user_name}\ngrade:{grade}{subenglishdict[sub]}")
 
                 elif subject == '2':
                     sub = menufunc.menu(submath)
@@ -98,9 +98,9 @@ if user == '1':
                                 break
                             sub = menufunc.menu(submath_error)
                     with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\nsubject:Math:{submathdict[sub]}")
+                        file.write(f"\nname:{user_name}\nsubject:Math:{submathdict[sub]}")
                     with open(f"I need help with school{grade}Math.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\ngrade:{grade}{submathdict[sub]}")
+                        file.write(f"\nname:{user_name}\ngrade:{grade}{submathdict[sub]}")
 
                 elif subject == '3':
                     sub = menufunc.menu(subcitizenship)
@@ -112,9 +112,9 @@ if user == '1':
                                 break
                             sub = menufunc.menu(subcitizenship_error)
                     with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\nsubject:Citizenship:{subcitizenshipdict[sub]}")
+                        file.write(f"\nname:{user_name}\nsubject:Citizenship:{subcitizenshipdict[sub]}")
                     with open(f"I need help with school{grade}Citizenship.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\ngrade:{grade}{subcitizenshipdict[sub]}")
+                        file.write(f"\nname:{user_name}\ngrade:{grade}{subcitizenshipdict[sub]}")
 
                 elif subject == '4':
                     sub = menufunc.menu(subliterature)
@@ -126,9 +126,9 @@ if user == '1':
                                 break
                             sub = menufunc.menu(subliterature_error)
                     with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\nsubject:Literature:{subliteraturedict[sub]}")
+                        file.write(f"\nname:{user_name}\nsubject:Literature:{subliteraturedict[sub]}")
                     with open(f"I need help with school{grade}Literature.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\ngrade:{grade}{subliteraturedict[sub]}")
+                        file.write(f"\nname:{user_name}\ngrade:{grade}{subliteraturedict[sub]}")
 
 
                 elif subject == '5':
@@ -141,9 +141,9 @@ if user == '1':
                                 break
                             sub = menufunc.menu(subbible_error)
                     with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\nsubject:Bible:{subbibledict[sub]}")
+                        file.write(f"\nname:{user_name}\nsubject:Bible:{subbibledict[sub]}")
                     with open(f"I need help with school{grade}Bible.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\ngrade:{grade}{subbibledict[sub]}")
+                        file.write(f"\nname:{user_name}\ngrade:{grade}{subbibledict[sub]}")
 
                 elif subject == '6':
                     sub = menufunc.menu(subhebrew)
@@ -155,9 +155,9 @@ if user == '1':
                                 break
                             sub = menufunc.menu(subhebrew_error)
                     with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\nsubject:Hebrew:{subhebrewdict[sub]}")
+                        file.write(f"\nname:{user_name}\nsubject:Hebrew:{subhebrewdict[sub]}")
                     with open(f"I need help with school{grade}Hebraw.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\ngrade:{grade}{subhebrewdict[sub]}")
+                        file.write(f"\nname:{user_name}\ngrade:{grade}{subhebrewdict[sub]}")
 
                 elif subject == '7':
                     sub = menufunc.menu(subhistory)
@@ -169,9 +169,9 @@ if user == '1':
                                 break
                             sub = menufunc.menu(subhistory_error)
                     with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\nsubject:History:{subhistorydict[sub]}")
+                        file.write(f"\nname:{user_name}\nsubject:History:{subhistorydict[sub]}")
                     with open(f"I need help with school{grade}History.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\ngrade:{grade}{subhistorydict[sub]}")
+                        file.write(f"\nname:{user_name}\ngrade:{grade}{subhistorydict[sub]}")
 
 
 elif user == '2':
