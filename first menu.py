@@ -77,14 +77,12 @@ elif user == '2':
     else:
         while grade not in garde_list:
             grade = menufunc.menu(what_garde_error_txt)
-            with open("problam_with_school.txt", "a") as file: #פתיחת קובץ טקסט
-                file.write(f"grade: {grade}\n") #הוספה לקובץ טקסט
             if grade == 'exit':
                 break
         if grade in garde_list:
             issue = menufunc.menu(option_2_txt)
             with open("problam_with_school.txt", "a") as file: #פתיחת קובץ טקסט
-                file.write(f"The issue: {issue}\n") #הוספה לקובץ טקסט
+                file.write(f"garde: {grade}\nThe issue: {issue}\n") #הוספה לקובץ טקסט
             if issue == 'exit':
                 pass
             else:
@@ -100,12 +98,10 @@ elif user == '3':
             if grade == 'exit':
                 break
         if grade in garde_list:
-            with open("other_problam.txt", "a") as file: #פתיחת קובץ טקסט
-                file.write(f"grade: {grade}\n") #הוספה לקובץ טקסט
 
             problem = menufunc.menu(option_3_txt)
             with open("other_problam.txt", "a") as file: #פתיחת קובץ טקסט
-                file.write(f"The problem: {problem}\n") #הוספה לקובץ טקסט
+                file.write(f"garde: {grade}\nThe problem: {problem}\n") #הוספה לקובץ טקסט
 
 
   #  user = menufunc.menu(option_1_txt)
