@@ -58,11 +58,9 @@ if user == '1':
             if grade == 'exit':
                 break
         if grade in garde_list:
-            with open(f"help_with_school {grade}.txt", "a") as file:  #למחנך פתיחת קובץ טקסט
-                file.write(f"name: {user_name}\n")  # הוספה לקובץ טקסט
+            pass
             subject = menufunc.menu(option_1_txt)
             if subject == 'exit':
-                open(f"help_with_school {grade}.txt", "w").close()
                 pass
             else:
                 while subject not in subject_list:
@@ -70,21 +68,15 @@ if user == '1':
                     if subject == 'exit':
                         break
                 if subject == '1':
-                    with open(f"help_with_school {grade}english.txt", "a") as file:
-                        file.write(f"name:{user_name}grade: {grade}\n")
-                    with open(f"help_with_school {grade}.txt", "a") as file:
-                        file.write('english:')
-
-                        sub = menufunc.menu(subenglish)
-                        if sub in num_of_sub:
-                            pass
-                        else:
-                            while sub not in num_of_sub:
-                                if sub == 'exit':
-                                    break
+                    sub = menufunc.menu(subenglish)
+                    if sub in num_of_sub:
+                        pass
+                    else:
+                        while sub not in num_of_sub:
+                            if sub == 'exit':
+                                break
                             sub = menufunc.menu(subenglish_error)
-                        with open(f"help_with_school {grade}english.txt", "a") as file:
-                            file.write(f"{sub}")
+
 
 
 
