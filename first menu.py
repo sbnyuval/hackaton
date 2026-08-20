@@ -39,10 +39,13 @@ if user == '1':
     else:
         while grade not in garde_list:
             grade = menufunc.menu(what_garde_error_txt)
+            with open("help_with_school.txt", "a") as file:
+                file.write(grade)
             if grade == 'exit':
                 break
         if grade in garde_list:
             subject = menufunc.menu(option_1_txt)
+            file.write(subject)
             if subject == 'exit':
                 pass
             else:
@@ -93,20 +96,16 @@ elif user == '3':
             if grade == 'exit':
                 break
         if grade in garde_list:
+            with open("other_problam.txt", "a") as file:
+                file.write(f"{grade}\n")
             problem = menufunc.menu(option_3_txt)
-            pass
-
+            with open("other_problam.txt", "a") as file:
+                file.write(f"{problem}\n")
 
 
   #  user = menufunc.menu(option_1_txt)
 #elif user == '2':
  #   user = menufunc.menu(option_2_txt)
 #elif user == '3':
-
-
-
-
-
-
 
 
