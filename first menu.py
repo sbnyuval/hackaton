@@ -35,6 +35,7 @@ option_1_error_txt = '(you must choose a num in the range:1-7)\n in what subject
 option_2_txt =  'what issue whould you like to report?'
 option_3_txt = 'what other problems whould you like to report?\n In an urgent situation, you can contact ERAN (Mental Health First Aid) anonymously at any time by calling 1201 or via the ERAN Association website.'
 subenglish =  "1.the wave \n 2.the enemy"
+subenglishdict ={'1':'the wave','2':'the enemy'}
 subenglish_error =  "(you must pick the num of the option you want)\n1.the wave \n 2.the enemy"
 submath =  "1.algebra\n 2.geometry"
 submath_error =  "(you must pick the num of the option you want)\n1.algebra\n 2.geometry"
@@ -136,6 +137,8 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subhistory_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:History:{sub}")
 
 
 elif user == '2':
