@@ -24,6 +24,7 @@ else:
             break
         user = menufunc.menu(open_menu_if_error_txt)
 # כאן אני מפנה אותו לפי בחירה
+user_name = 'Amitai'
 num_of_sub =['1','2']
 garde_list = ['10','11','12']
 subject_list = ['1','2','3','4','5','6','7']
@@ -54,16 +55,14 @@ if user == '1':
     else:
         while grade not in garde_list:
             grade = menufunc.menu(what_garde_error_txt)
-            with open("help_with_school.txt", "a") as file:
-                file.write(grade)
             if grade == 'exit':
                 break
         if grade in garde_list:
-            with open("help_with_school.txt", "a") as file:  # פתיחת קובץ טקסט
-                file.write(f"grade: {grade}\n")  # הוספה לקובץ טקסט
+            with open(f"help_with_school {grade}.txt", "a") as file:  #למחנך פתיחת קובץ טקסט
+                file.write(f"name: {user_name}\n")  # הוספה לקובץ טקסט
             subject = menufunc.menu(option_1_txt)
-            file.write(subject)
             if subject == 'exit':
+                open(f"help_with_school {grade}.txt", "w").close()
                 pass
             else:
                 while subject not in subject_list:
@@ -71,14 +70,22 @@ if user == '1':
                     if subject == 'exit':
                         break
                 if subject == '1':
-                    sub = menufunc.menu(subenglish)
-                    if sub in num_of_sub:
-                        pass
-                    else:
-                        while sub not in num_of_sub:
-                            if sub == 'exit':
-                                break
+                    with open(f"help_with_school {grade}english.txt", "a") as file:
+                        file.write(f"name:{user_name}grade: {grade}\n")
+                    with open(f"help_with_school {grade}.txt", "a") as file:
+                        file.write('english:')
+
+                        sub = menufunc.menu(subenglish)
+                        if sub in num_of_sub:
+                            pass
+                        else:
+                            while sub not in num_of_sub:
+                                if sub == 'exit':
+                                    break
                             sub = menufunc.menu(subenglish_error)
+                        with open(f"help_with_school {grade}english.txt", "a") as file:
+                            file.write(f"{sub}")
+
 
 
 
