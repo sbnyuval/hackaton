@@ -62,3 +62,4 @@ def enter_new_teachers_to_school_system():
     print(STAFF_NAMES_AND_JOBS)
 
 enter_new_teachers_to_school_system()
+#הבעיה היא בJOB!
