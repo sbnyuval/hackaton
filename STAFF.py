@@ -36,13 +36,13 @@ def enter_new_teachers_to_school_system():
                 if JOB.lower == 'exit':
                     break
                 JOB = menu(job_name)
-        STAFF_NAMES_AND_JOBS[i](staff=JOB)
+        STAFF_NAMES_AND_JOBS[i]=JOB
         if JOB.lower()=='teacher':
             what_grade_do_you_teach='what grade do you teach'
             do_you_teach_more_than_1_grade=menu('do you teach another grade?(if yes-enter the grade number, if not-enter \"no\" ')
             STAFF_TEACHING_GRADE=menu(what_grade_do_you_teach)
-            if STAFF_TEACHING_GRADE in dictionary.dic[1]:
-                STAFF_NAMES_AND_JOBS[i](staff=STAFF_TEACHING_GRADE)
+            if STAFF_TEACHING_GRADE in dictionary.dic['grade'][1]:
+                STAFF_NAMES_AND_JOBS[i]=STAFF_TEACHING_GRADE
                 pass
             else:
                 while STAFF_TEACHING_GRADE in dictionary.dic[1]:
@@ -51,7 +51,7 @@ def enter_new_teachers_to_school_system():
             while True:
                 STAFF_TEACHING_GRADE = menu(do_you_teach_more_than_1_grade)
                 if STAFF_TEACHING_GRADE in dictionary.dic[1]:
-                    STAFF_NAMES_AND_JOBS[i](staff=STAFF_TEACHING_GRADE)
+                    STAFF_NAMES_AND_JOBS[i]=STAFF_TEACHING_GRADE
                     pass
                 elif STAFF_TEACHING_GRADE.lower() == 'no':
                     break
