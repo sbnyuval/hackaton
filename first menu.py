@@ -83,10 +83,8 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subenglish_error)
-
-
-
-
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:English:{subenglishdict[sub]}")
 
                 elif subject == '2':
                     sub = menufunc.menu(submath)
@@ -97,6 +95,8 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(submath_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Math:{submathdict[sub]}")
 
                 elif subject == '3':
                     sub = menufunc.menu(subcitizenship)
@@ -107,6 +107,9 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subcitizenship_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Citizenship:{subcitizenshipdict[sub]}")
+
                 elif subject == '4':
                     sub = menufunc.menu(subliterature)
                     if sub in num_of_sub:
@@ -116,6 +119,9 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subliterature_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Literature:{subliteraturedict[sub]}")
+
                 elif subject == '5':
                     sub = menufunc.menu(subbible)
                     if sub in num_of_sub:
@@ -125,6 +131,9 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subbible_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Bible:{subbibledict[sub]}")
+
                 elif subject == '6':
                     sub = menufunc.menu(subhebrew)
                     if sub in num_of_sub:
@@ -134,6 +143,9 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subhebrew_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Hebrew:{subhebrewdict[sub]}")
+
                 elif subject == '7':
                     sub = menufunc.menu(subhistory)
                     if sub in num_of_sub:
@@ -144,7 +156,7 @@ if user == '1':
                                 break
                             sub = menufunc.menu(subhistory_error)
                     with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                        file.write(f"name:{user_name}\nsubject:History:{sub}")
+                        file.write(f"name:{user_name}\nsubject:History:{subhistorydict[sub]}")
 
 
 elif user == '2':
