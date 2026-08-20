@@ -1,4 +1,4 @@
-import pandas as pd
+
 dic = {"grade" : ["10", "11", "12"],
        "class" : ["math" "english", "history" "literature", "language", "bible", "citizenship"],
        "math_topic" : ["algebra", "geometry"],

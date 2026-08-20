@@ -41,7 +41,7 @@ if user == '1':
             grade = menufunc.menu(what_garde_error_txt)
             if grade == 'exit':
                 break
-        if grade == '10':
+        if grade in garde_list:
             subject = menufunc.menu(option_1_txt)
             if subject == 'exit':
                 pass
@@ -51,13 +51,57 @@ if user == '1':
                     if subject == 'exit':
                         break
                 if subject == '1':
+                    pass
+                elif subject == '2':
+                    pass
+                elif subject == '3':
+                    pass
+                elif subject == '4':
+                    pass
+                elif subject == '5':
+                    pass
+                elif subject == '6':
+                    pass
+                elif subject == '7':
+                    pass
 
 
-    if
-    user = menufunc.menu(option_1_txt)
+
 elif user == '2':
-    user = menufunc.menu(option_2_txt)
+    grade = menufunc.menu(what_garde_txt)
+    if grade == 'exit':
+        pass
+    else:
+        while grade not in garde_list:
+            grade = menufunc.menu(what_garde_error_txt)
+            if grade == 'exit':
+                break
+        if grade in garde_list:
+            issue = menufunc.menu(option_2_txt)
+            if issue == 'exit':
+                pass
+            else:
+                pass
+                #האישו מוגדר אפשר להעביר אותו
 elif user == '3':
+    grade = menufunc.menu(what_garde_txt)
+    if grade == 'exit':
+        pass
+    else:
+        while grade not in garde_list:
+            grade = menufunc.menu(what_garde_error_txt)
+            if grade == 'exit':
+                break
+        if grade in garde_list:
+            problem = menufunc.menu(option_3_txt)
+            pass
+
+
+
+  #  user = menufunc.menu(option_1_txt)
+#elif user == '2':
+ #   user = menufunc.menu(option_2_txt)
+#elif user == '3':
 
 
 
