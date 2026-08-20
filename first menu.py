@@ -24,6 +24,7 @@ else:
             break
         user = menufunc.menu(open_menu_if_error_txt)
 # כאן אני מפנה אותו לפי בחירה
+num_of_sub =['1','2']
 garde_list = ['10','11','12']
 subject_list = ['1','2','3','4','5','6','7']
 what_garde_txt = 'what garde are you in?(10-12)'
@@ -32,6 +33,20 @@ option_1_txt = 'in what subject can we help you today?\n 1.English\n2.Math\n3.Ci
 option_1_error_txt = '(you must choose a num in the range:1-7)\n in what subject can we help you today?\n 1.English\n2.Math\n3.Citizenship\n4.Literature\n5.Bible\n6.Hebrew\n7.History'
 option_2_txt =  'what issue whould you like to report?'
 option_3_txt = 'what other problems whould you like to report?\n In an urgent situation, you can contact ERAN (Mental Health First Aid) anonymously at any time by calling 1201 or via the ERAN Association website.'
+subenglish =  "1.the wave \n 2.the enemy"
+subenglish_error =  "(you must pick the num of the option you want)\n1.the wave \n 2.the enemy"
+submath =  "1.algebra\n 2.geometry"
+submath_error =  "(you must pick the num of the option you want)\n1.algebra\n 2.geometry"
+subcitizenship = "1.legal rights \n 2.the three authorities"
+subcitizenship_error = "(you must pick the num of the option you want)\n1.legal rights \n 2.the three authorities"
+subliterature = "1.tehila \n2.the lady and the peddler"
+subliterature_error= "you must pick the num of the option you want)\n1.tehila \n2.the lady and the peddler"
+subbible = "1.tora \n 2. nevim"
+subbible_error = "(you must pick the num of the option you want)\n1.tora \n 2. nevim"
+subhebrew = "1. number name \n 2. reading comprehension"
+subhebrew_error = "(you must pick the num of the option you want)\n1. number name \n 2. reading comprehension"
+subhistory = "1.World War I\n2.World War II"
+subhistory_error = "(you must pick the num of the option you want)\n1.World War I\n2.World War II"
 if user == '1':
     grade = menufunc.menu(what_garde_txt)
     if grade == 'exit':
@@ -56,19 +71,73 @@ if user == '1':
                     if subject == 'exit':
                         break
                 if subject == '1':
-                    pass
+                    sub = menufunc.menu(subenglish)
+                    if sub in num_of_sub:
+                        pass
+                    else:
+                        while sub not in num_of_sub:
+                            if sub == 'exit':
+                                break
+                            sub = menufunc.menu(subenglish_error)
+
+
+
                 elif subject == '2':
-                    pass
+                    sub = menufunc.menu(submath)
+                    if sub in num_of_sub:
+                        pass
+                    else:
+                        while sub not in num_of_sub:
+                            if sub == 'exit':
+                                break
+                            sub = menufunc.menu(submath_error)
+
                 elif subject == '3':
-                    pass
+                    sub = menufunc.menu(subcitizenship)
+                    if sub in num_of_sub:
+                        pass
+                    else:
+                        while sub not in num_of_sub:
+                            if sub == 'exit':
+                                break
+                            sub = menufunc.menu(subcitizenship_error)
                 elif subject == '4':
-                    pass
+                    sub = menufunc.menu(subliterature)
+                    if sub in num_of_sub:
+                        pass
+                    else:
+                        while sub not in num_of_sub:
+                            if sub == 'exit':
+                                break
+                            sub = menufunc.menu(subliterature_error)
                 elif subject == '5':
-                    pass
+                    sub = menufunc.menu(subbible)
+                    if sub in num_of_sub:
+                        pass
+                    else:
+                        while sub not in num_of_sub:
+                            if sub == 'exit':
+                                break
+                            sub = menufunc.menu(subbible_error)
                 elif subject == '6':
-                    pass
+                    sub = menufunc.menu(subhebrew)
+                    if sub in num_of_sub:
+                        pass
+                    else:
+                        while sub not in num_of_sub:
+                            if sub == 'exit':
+                                break
+                            sub = menufunc.menu(subhebrew_error)
                 elif subject == '7':
-                    pass
+                    sub = menufunc.menu(subhistory)
+                    if sub in num_of_sub:
+                        pass
+                    else:
+                        while sub not in num_of_sub:
+                            if sub == 'exit':
+                                break
+                            sub = menufunc.menu(subhistory_error)
+
 
 elif user == '2':
     grade = menufunc.menu(what_garde_txt)
