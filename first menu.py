@@ -35,18 +35,25 @@ option_1_error_txt = '(you must choose a num in the range:1-7)\n in what subject
 option_2_txt =  'what issue whould you like to report?'
 option_3_txt = 'what other problems whould you like to report?\n In an urgent situation, you can contact ERAN (Mental Health First Aid) anonymously at any time by calling 1201 or via the ERAN Association website.'
 subenglish =  "1.the wave \n 2.the enemy"
+subenglishdict ={'1':'the wave','2':'the enemy'}
 subenglish_error =  "(you must pick the num of the option you want)\n1.the wave \n 2.the enemy"
 submath =  "1.algebra\n 2.geometry"
+submathdict ={'1':'algebra','2':'geometry'}
 submath_error =  "(you must pick the num of the option you want)\n1.algebra\n 2.geometry"
 subcitizenship = "1.legal rights \n 2.the three authorities"
+subcitizenshipdict = {'1':'legal rights','2':'the three authorities'}
 subcitizenship_error = "(you must pick the num of the option you want)\n1.legal rights \n 2.the three authorities"
 subliterature = "1.tehila \n2.the lady and the peddler"
+subliteraturedict = {'1':'tehila','2':'the lady and the peddler'}
 subliterature_error= "you must pick the num of the option you want)\n1.tehila \n2.the lady and the peddler"
 subbible = "1.tora \n 2. nevim"
+subbibledict = {'1':'tora ','2':'nevim'}
 subbible_error = "(you must pick the num of the option you want)\n1.tora \n 2. nevim"
 subhebrew = "1. number name \n 2. reading comprehension"
+subhebrewdict = {'1':'number name' , '2':'reading comprehension'}
 subhebrew_error = "(you must pick the num of the option you want)\n1. number name \n 2. reading comprehension"
 subhistory = "1.World War I\n2.World War II"
+subhistorydict = {'1':'World War I','2':'World War II'}
 subhistory_error = "(you must pick the num of the option you want)\n1.World War I\n2.World War II"
 if user == '1':
     grade = menufunc.menu(what_garde_txt)
@@ -76,10 +83,8 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subenglish_error)
-
-
-
-
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:English:{subenglishdict[sub]}")
 
                 elif subject == '2':
                     sub = menufunc.menu(submath)
@@ -90,6 +95,8 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(submath_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Math:{submathdict[sub]}")
 
                 elif subject == '3':
                     sub = menufunc.menu(subcitizenship)
@@ -100,6 +107,9 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subcitizenship_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Citizenship:{subcitizenshipdict[sub]}")
+
                 elif subject == '4':
                     sub = menufunc.menu(subliterature)
                     if sub in num_of_sub:
@@ -109,6 +119,9 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subliterature_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Literature:{subliteraturedict[sub]}")
+
                 elif subject == '5':
                     sub = menufunc.menu(subbible)
                     if sub in num_of_sub:
@@ -118,6 +131,9 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subbible_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Bible:{subbibledict[sub]}")
+
                 elif subject == '6':
                     sub = menufunc.menu(subhebrew)
                     if sub in num_of_sub:
@@ -127,6 +143,9 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subhebrew_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:Hebrew:{subhebrewdict[sub]}")
+
                 elif subject == '7':
                     sub = menufunc.menu(subhistory)
                     if sub in num_of_sub:
@@ -136,6 +155,8 @@ if user == '1':
                             if sub == 'exit':
                                 break
                             sub = menufunc.menu(subhistory_error)
+                    with open(f"I need help with school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
+                        file.write(f"name:{user_name}\nsubject:History:{subhistorydict[sub]}")
 
 
 elif user == '2':
@@ -156,7 +177,7 @@ elif user == '2':
                 for g in garde_list:
                     if grade == g:
                         with open(f"problam_with_school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                            file.write(f"The issue: {issue}\n")  # הוספה לקובץ טקסט
+                            file.write(f"name:{user_name}\nThe issue: {issue}\n\n")  # הוספה לקובץ טקסט
                 #האישו מוגדר אפשר להעביר אותו
 elif user == '3':
     grade = menufunc.menu(what_garde_txt)
@@ -175,7 +196,7 @@ elif user == '3':
                 for g in garde_list:
                     if grade == g:
                         with open(f"problam_with_school{grade}.txt", "a") as file:  # פתיחת קובץ טקסט
-                            file.write(f"The problem: {problem}\n")  # הוספה לקובץ טקסט
+                            file.write(f"name:{user_name}\nThe problem: {problem}\n\n")  # הוספה לקובץ טקסט
 
 
   #  user = menufunc.menu(option_1_txt)
